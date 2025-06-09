@@ -22,3 +22,5 @@ Screenshots serão adicionadas conforme entrega de features.
 ## 📞 Contato - Jonathan dos Santos
   ### Email:
       dos.santos.2k23@gmail.com
+  ### Whatsapp
+      (35) 99149 7500
