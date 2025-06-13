@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:forte_distribuidora/screens/home/widgets/hero_banner.dart';
+import 'package:forte_distribuidora/screens/widgets/home/hero_banner.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
