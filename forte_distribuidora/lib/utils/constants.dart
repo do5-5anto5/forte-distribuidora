@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 //color
 const kPrimaryColor = Color(0xff0379CC);
@@ -16,6 +16,6 @@ const kDefaultDuration = Duration(milliseconds: 250);
 final kDefaultShadow = BoxShadow(
   offset: const Offset(0, 10),
   spreadRadius: 5,
-  blurRadius: 20,
-  color: const Color(0xFF0700B1).withAlpha(38),
+  blurRadius: 60,
+  color: const Color(0xFF0700B1).withAlpha(100),
 );
