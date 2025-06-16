@@ -43,7 +43,7 @@ class _HeroBannerState extends State<HeroBanner> {
                 _size.width == 300
                     ? 250
                     : _size.width >= 500
-                    ? 500
+                    ? 350
                     : 300,
             aspectRatio: 16 / 9,
             viewportFraction: 1,
@@ -93,7 +93,7 @@ class SliderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Size _size = MediaQuery.of(context).size;
+    Size _size = MediaQuery.of(context).size;
     return Container(
       // padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       color: kgreyColor,
@@ -105,7 +105,11 @@ class SliderCard extends StatelessWidget {
           Positioned.fill(
             child: Image.asset(
               image,
-              fit: BoxFit.cover,
+              fit: _size.width == 300
+                  ? BoxFit.contain
+                  : _size.width >= 500
+                  ? BoxFit.fill
+                  : BoxFit.contain,
               color: kgreyColor,
               colorBlendMode: BlendMode.darken,
               // Makes the image cover the entire container
