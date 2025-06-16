@@ -20,7 +20,7 @@ class TopPicksGrid extends StatelessWidget {
         itemCount: topPicks().length,
         itemBuilder:
             (BuildContext context, int index) =>
-                ProductsCard(press: () {}, products: topPicks()[index]),
+                ProductsCard(press: () {}, products: topPicks().elementAt(index)),
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
         mainAxisSpacing: 10.0,
         crossAxisSpacing: 10.0,
@@ -44,7 +44,7 @@ class TopPicksGridMobile extends StatelessWidget {
         itemCount: topPicks().length,
         itemBuilder:
             (BuildContext context, int index) =>
-                ProductsCard(press: () {}, products: topPicks()[index]),
+                ProductsCard(press: () {}, products: topPicks().elementAt(index)),
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
         mainAxisSpacing: 10.0,
         crossAxisSpacing: 10.0,
@@ -117,9 +117,9 @@ class _ProductsCardState extends State<ProductsCard> {
                 ],
               ),
             ),
-            // isHover
-            // ? Container(
-            //   color: Colors.black12,
+            isHover
+            ? Container(
+              color: Colors.black12,
             //   child: Column(
             //     mainAxisAlignment: MainAxisAlignment.center,
             //     children: [
@@ -151,8 +151,8 @@ class _ProductsCardState extends State<ProductsCard> {
             //       // ),
             //     ],
             //   ),
-            // )
-            // : Container(),
+            )
+            : Container(),
           ],
         ),
       ),

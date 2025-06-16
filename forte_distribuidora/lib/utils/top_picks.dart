@@ -1,8 +1,28 @@
 import '../domain/data/models/data_list.dart';
 import '../domain/data/models/product.dart';
 
-List<Product> topPicks() {
+Set<Product>? _cachedTopPicks;
+
+Set<Product> topPicks() {
+  // If the cache is not null, return it
+  if (_cachedTopPicks != null) {
+    return _cachedTopPicks!;
+  }
+
   List<Product> toShuffle = List.from(allProducts);
   toShuffle.shuffle();
-  return toShuffle.sublist(0, 3);
+  Set<Product> returnSet = {};
+
+  for (Product product in toShuffle) {
+    returnSet.add(product);
+    if (returnSet.length == 3) break;
+  }
+
+  _cachedTopPicks = returnSet;
+  return returnSet;
+}
+
+// refresh the cache
+void refreshTopPicks() {
+  _cachedTopPicks = null;
 }

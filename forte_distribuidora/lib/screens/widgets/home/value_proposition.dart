@@ -81,39 +81,41 @@ class _ValuePropositionCardState extends State<ValuePropositionCard> {
             isHover = value;
           });
         },
-        child: Container(
-          width: _size.width <= 770
-              ? _size.width
-              : _size.width >= 975
-              ? 300
-              : 200,
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-          ),
-          decoration: BoxDecoration(
-              color: kDarkgreyColor, boxShadow: [if (isHover) kDefaultShadow]),
-          child: Column(
-            children: [
-              Image.asset(
-                widget.image,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.fill,
-                isAntiAlias: true,
-              ),
-              // const SizedBox(
-              //   height: 15,
-              // ),
-              // MaterialButton(
-              //   color: kSecondaryColor,
-              //   height: 40,
-              //   onPressed: () {},
-              //   child: Text(
-              //     widget.title,
-              //     style: const TextStyle(color: kWhiteColor),
-              //   ),
-              // ),
-            ],
+        child: Center(
+          child: Container(
+            width: _size.width <= 770
+                ? _size.width - 200
+                : _size.width >= 975
+                ? 300
+                : 200,
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+            ),
+            decoration: BoxDecoration(
+                color: kDarkgreyColor, boxShadow: [if (isHover) kDefaultShadow]),
+            child: Column(
+              children: [
+                Image.asset(
+                  widget.image,
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                  isAntiAlias: true,
+                ),
+                // const SizedBox(
+                //   height: 15,
+                // ),
+                // MaterialButton(
+                //   color: kSecondaryColor,
+                //   height: 40,
+                //   onPressed: () {},
+                //   child: Text(
+                //     widget.title,
+                //     style: const TextStyle(color: kWhiteColor),
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
       ),
