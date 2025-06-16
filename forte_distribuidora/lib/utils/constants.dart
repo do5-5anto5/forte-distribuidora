@@ -17,5 +17,5 @@ final kDefaultShadow = BoxShadow(
   offset: const Offset(0, 10),
   spreadRadius: 5,
   blurRadius: 60,
-  color: const Color(0xFF0700B1).withAlpha(100),
+  color: kDarkblueColor.withAlpha(100),
 );
