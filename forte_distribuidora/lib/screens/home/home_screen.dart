@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:forte_distribuidora/screens/widgets/home/hero_banner.dart';
 
-import '../widgets/home/value_proposition.dart';
+import '../widgets/product/products_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,9 +12,10 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           const HeroBanner(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: const ValueProposition(),
+          Column(
+            children: [
+              const ProductSection(),
+            ],
           ),
         ],
       ),
