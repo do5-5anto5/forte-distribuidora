@@ -60,5 +60,5 @@ final List<Product> metalFramingList = [
 )];
 final List<Product> jointCompoundsList = [
   ...allProducts.where((value) =>
-  value.category == Category.metalFraming.name
+  value.category == Category.jointCompound.name
   )];
