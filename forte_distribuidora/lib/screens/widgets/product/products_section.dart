@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:forte_distribuidora/screens/widgets/product/test.dart';
 import 'package:forte_distribuidora/screens/widgets/product/top_picks.dart';
 import 'package:forte_distribuidora/screens/widgets/home/value_proposition.dart';
 import 'package:forte_distribuidora/screens/widgets/product/products_by_category.dart';
