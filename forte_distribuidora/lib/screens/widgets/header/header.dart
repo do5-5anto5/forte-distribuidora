@@ -1,13 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/constants.dart';
 
-class Header extends StatelessWidget {
+class Header extends StatefulWidget {
   const Header({super.key});
 
   @override
+  State<Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
+  Future<void> _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      if (!await launchUrl(uri, mode: LaunchMode.platformDefault)) {
+        _showErrorSnackBar(uri.host);
+      }
+    } else {
+      _showErrorSnackBar(uri.host);
+    }
+  }
+
+  void _showErrorSnackBar(String host) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Não foi possível abrir o link para $host')),
+      );
+    }
+    debugPrint('Could not launch $host');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final socialUrls = [
+      'https://wa.me/553597098053',
+      'https://www.instagram.com/forte_distribuidora_de_gesso/',
+    ];
+
+    final socialButtonAssets = [
+      'assets/images/icons/instagram.svg',
+      'assets/images/icons/whatsapp.svg',
+    ];
+
+    final _size = MediaQuery.of(context).size;
 
     return Container(
       color: kWhiteColor,
@@ -30,20 +67,32 @@ class Header extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(
-                        'assets/images/icons/instagram.svg',
-                        width: 40,
-                        height: 40,
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(
-                        'assets/images/icons/whatsapp.svg',
-                        width: 40,
-                        height: 40,
+                    Padding(
+                      padding:
+                          _size.width >= 500
+                              ? EdgeInsets.only(right: 10)
+                              : EdgeInsets.all(0.0),
+                      child: SizedBox(
+                        height: 60,
+                        child: ListView.separated(
+                          itemCount: socialButtonAssets.length,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          separatorBuilder:
+                              (context, child) => SizedBox(width: 8.0),
+                          itemBuilder: (context, index) {
+                            return IconButton(
+                              onPressed: () {
+                                _launchURL(socialUrls[index]);
+                              },
+                              icon: SvgPicture.asset(
+                                socialButtonAssets[index],
+                                width: _size.width >= 500 ? 50 : 40,
+                                height: _size.width >= 500 ? 50 : 40,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ],
