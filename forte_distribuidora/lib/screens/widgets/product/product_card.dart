@@ -27,7 +27,11 @@ class _ProductContentShowState extends State<ProductContentShow> {
     return InkWell(
       onTap: () {
         setState(() {
-          isHover == false ? true : false;
+          if (isHover) {
+            isHover = false;
+          } else {
+            isHover = true;
+          }
         });
         widget.press;
       },
