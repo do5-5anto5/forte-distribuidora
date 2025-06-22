@@ -35,8 +35,8 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     final socialUrls = [
-      'https://wa.me/553597098053',
       'https://www.instagram.com/forte_distribuidora_de_gesso/',
+      'https://wa.me/553597098053',
     ];
 
     final socialButtonAssets = [
