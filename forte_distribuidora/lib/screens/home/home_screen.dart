@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:forte_distribuidora/screens/widgets/footer/footer.dart';
 import 'package:forte_distribuidora/screens/widgets/home/hero_banner.dart';
 
 import '../widgets/header/header.dart';
@@ -28,6 +29,8 @@ class HomeScreen extends StatelessWidget {
               const ProductSection(),
             ],
           ),
+          SizedBox(height: 20),
+          Footer()
         ],
       ),
     );
