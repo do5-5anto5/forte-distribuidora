@@ -5,16 +5,11 @@ import '../../../utils/responsive.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
-
   static const List<String> brands = [
-    'assets/images/isover.png',
-    'assets/images/placo.png',
-    'assets/images/gesso_america.png',
-    'assets/images/walsywa.png',
-    // 'images/g1.svg',
-    // 'images/isover.svg',
-    // 'images/placo.svg',
-    // 'images/w1.svg'
+    'assets/images/brands/gessoamerica.webp',
+    'assets/images/brands/isover.webp',
+    'assets/images/brands/placo.webp',
+    'assets/images/brands/walsywa.webp',
   ];
 
   @override
@@ -86,7 +81,7 @@ class Footer extends StatelessWidget {
                             child: SizedBox(
                               height: 100,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(0),
+                                borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
                                   brandAssetPath,
                                   height: 84,
@@ -118,7 +113,7 @@ class Footer extends StatelessWidget {
               ),
             ),
             Text(
-              'Av. Terezinha Silos Ferreira, n 535 - Diamantina\n'
+              'Av. Terezinha Silos Ferreira, n 420 - Diamantina\n'
               'São Sebastiçao do Paraíso - Minas Gerais',
               style: TextStyle(
                 color: kWhiteColor,
@@ -188,9 +183,9 @@ class Footer extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   // Define 2 colunas
-                  crossAxisSpacing: 20,
+                  crossAxisSpacing: 5,
                   // Espaçamento horizontal entre as colunas
-                  mainAxisSpacing: 20,
+                  mainAxisSpacing: 5,
                   // Espaçamento vertical entre as linhas
                   childAspectRatio:
                       1.6, // Ajuste esse valor para controlar a proporção (largura/altura) dos itens. 160/100 = 1.6
@@ -200,11 +195,11 @@ class Footer extends StatelessWidget {
                   final brandAssetPath = brands[index];
                   return Center(
                     // Centraliza cada item na célula do grid
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
                     child: SizedBox(
                       height: 100,
-                      width: 160,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(0),
+                        width: 160,
                         child: Image.asset(
                           brandAssetPath,
                           height: 100,
@@ -234,7 +229,7 @@ class Footer extends StatelessWidget {
               ),
             ),
             Text(
-              'Av. Terezinha Silos Ferreira, n 535 - Diamantina\n'
+              'Av. Terezinha Silos Ferreira, n 420 - Diamantina\n'
               'São Sebastiçao do Paraíso - Minas Gerais',
               style: TextStyle(
                 color: kWhiteColor,
