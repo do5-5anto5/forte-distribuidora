@@ -69,6 +69,7 @@ class Footer extends StatelessWidget {
             ),
             Center(
               child: SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: IntrinsicWidth(
                   child: Row(

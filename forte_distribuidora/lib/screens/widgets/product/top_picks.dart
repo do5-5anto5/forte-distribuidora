@@ -13,9 +13,8 @@ class TopPicksGrid extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: StaggeredGridView.countBuilder(
-        //shrink wrap to avoid error
         shrinkWrap: true,
-        physics: const ScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,
         itemCount: topPicks().length,
         itemBuilder:
@@ -37,9 +36,8 @@ class TopPicksGridMobile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: StaggeredGridView.countBuilder(
-        //shrink wrap to avoid error
         shrinkWrap: true,
-        physics: const ScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         itemCount: topPicks().length,
         itemBuilder:
@@ -104,53 +102,14 @@ class _ProductsCardState extends State<ProductsCard> {
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
-                  // Text(
-                  //   "\$${widget.products.price}",
-                  //   style: const TextStyle(
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
                 ],
               ),
             ),
             isHover
             ? Container(
               color: Colors.black12,
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       MaterialButton(
-            //         color: kSecondaryColor,
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(50),
-            //         ),
-            //         height: 40,
-            //         onPressed: () {},
-            //         child: const Text(
-            //           "Quick View",
-            //           style: TextStyle(color: kWhiteColor),
-            //         ),
-            //       ),
-            //       // const SizedBox(
-            //       //   height: 20,
-            //       // ),
-            //       // MaterialButton(
-            //       //   shape: RoundedRectangleBorder(
-            //       //       borderRadius: BorderRadius.circular(50)),
-            //       //   color: kSecondaryColor,
-            //       //   height: 40,
-            //       //   onPressed: () {},
-            //       //   child: const Text(
-            //       //     "Shop Now",
-            //       //     style: TextStyle(color: kWhiteColor),
-            //       //   ),
-            //       // ),
-            //     ],
-            //   ),
             )
             : Container(),
           ],

@@ -25,6 +25,7 @@ class _ProductsByCategoryState extends State<ProductsByCategory> {
             children: [
               TabBar(
                 indicatorColor: kPrimaryColor,
+                physics: NeverScrollableScrollPhysics(),
                 unselectedLabelColor: Colors.black,
                 labelColor: kPrimaryColor,
                 indicatorWeight: 2.0,
@@ -131,6 +132,7 @@ class _ProductsByCategoryState extends State<ProductsByCategory> {
               child: Column(
                 children: [
                   TabBar(
+                    physics: NeverScrollableScrollPhysics(),
                     indicatorColor: kPrimaryColor,
                     unselectedLabelColor: Colors.black,
                     labelColor: kPrimaryColor,
